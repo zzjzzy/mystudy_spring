@@ -6,6 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+    <property name="name" value="张中建"></property>
     </bean>
 
 </beans>
