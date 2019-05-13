@@ -12,7 +12,7 @@ public class AccountDaoImpl  implements AccountDao {
 	}
 
 	public void inMoney(String to, Double money) {
-		// 调用jdbcTemplate操作数据库，电脑暂时没有数据库，先不做了。
+		// 调用jdbcTemplate操作数据库，电脑暂时没有数据库，先不做了。.
 		System.out.println("转入"+to+"账户中"+money+"元成功");
 
 	}
