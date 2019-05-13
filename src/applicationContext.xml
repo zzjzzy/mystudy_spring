@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+ <!--   <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+    <property name="name" value="张中建"></property>
+    </bean>
+    
+    <bean id="user" class="com.itcast.domain.User">
+    <property name="name" value="#{'zzj'}"></property>
+    </bean>
+    -->
+    
+<!--     spring中AOP的使用
+    1. 生成被增强的类
     <bean id="userDao" class="com.itcast.dao.UserDaoImple">
     <property name="name" value="张中建"></property>
     </bean>
+    2. 生成切面类
+    <bean id="myAspect" class="com.itcast.aspect.MyAspect"></bean>
+    3. 进行增强
+    <aop:config>
+    	配置切入点
+    	<aop:pointcut expression="execution(* com.itcast.dao.UserDaoImple.save(..))" id="pointcut1"/>
+    	配置切入点如何增强
+    	<aop:aspect ref="myAspect">
+    		<aop:before method="checkPri" pointcut-ref="pointcut1"/>
+    		<aop:after-returning method="writeLog" pointcut-ref="pointcut1" returning="result"/>
+    		<aop:around method="around" pointcut-ref="pointcut1"/>
+    	</aop:aspect>
+    </aop:config> -->
+    
+    <!-- AOP注解方式开发 -->
+    <aop:aspectj-autoproxy />
+    
+    <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+    <property name="name" value="张中建"></property>
+    </bean>
+    <bean id="myAspectAnno" class="com.itcast.aspect.MyAspectAnno"></bean>
+    
+    <import resource="tx.xml"></import>
+    
 
 </beans>

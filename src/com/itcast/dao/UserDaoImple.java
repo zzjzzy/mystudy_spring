@@ -8,8 +8,9 @@ public class UserDaoImple implements UserDao {
 		this.name = name;
 	}
 
-	public void save() {
-		System.out.println("UserDaoImpl执行了！"+name);
+	public String save() {
+		System.out.println("save方法执行了"+name);
+		return "UserDao save方法";
 
 	}
 
