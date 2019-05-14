@@ -1,5 +1,8 @@
 package com.itcast.account;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
 public class AccountServiceImpl implements AccountService {
 	
 	AccountDao accountDao;
