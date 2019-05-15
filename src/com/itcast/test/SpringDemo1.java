@@ -18,6 +18,6 @@ public class SpringDemo1 {
 //		System.out.println(user);
 		ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
 		AccountService accountService = (AccountService) app.getBean("accountService");
-		accountService.transfer("zzj", "dds", 100.0);
+		accountService.transfer("张中建", "李四", 100.0);
 	}
 }

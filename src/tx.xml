@@ -9,17 +9,17 @@
 		<property name="accountDao" ref="accountDao"></property>
 	</bean>
 	<bean id="accountDao" class="com.itcast.account.AccountDaoImpl">
-		<!-- <property name="jdbcTemplate" ref="jdbcTemplate"></property> -->
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	<!-- 
-	配置Spring的内置的连接池======================== -
+	
+	<!-- 配置Spring的内置的连接池======================== - -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql:///spring4_day03"/>
+		<property name="url" value="jdbc:mysql:///spring"/>
 		<property name="username" value="root"/>
-		<property name="password" value="abc"/>
+		<property name="password" value="123456"/>
 	</bean>
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean> -->
 

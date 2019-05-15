@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
- <!--   <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+ <!--   <bean id="userDao" class="com.itcast.dao.UserDaoImpl">
     <property name="name" value="张中建"></property>
     </bean>
     
@@ -16,7 +16,7 @@
     
 <!--     spring中AOP的使用
     1. 生成被增强的类
-    <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+    <bean id="userDao" class="com.itcast.dao.UserDaoImpl">
     <property name="name" value="张中建"></property>
     </bean>
     2. 生成切面类
@@ -36,7 +36,7 @@
     <!-- AOP注解方式开发 -->
     <aop:aspectj-autoproxy />
     
-    <bean id="userDao" class="com.itcast.dao.UserDaoImple">
+    <bean id="userDao" class="com.itcast.dao.UserDaoImpl">
     <property name="name" value="张中建"></property>
     </bean>
     <bean id="myAspectAnno" class="com.itcast.aspect.MyAspectAnno"></bean>

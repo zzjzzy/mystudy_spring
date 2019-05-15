@@ -1,6 +1,6 @@
 package com.itcast.dao;
 
-public class UserDaoImple implements UserDao {
+public class UserDaoImpl implements UserDao {
 	
 	String name;
 
